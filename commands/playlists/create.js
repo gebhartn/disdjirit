@@ -12,14 +12,16 @@ module.exports = {
     const body = { creator, name };
     const message = await msg.channel.send(`Creating new playlist: ${name}`);
 
-    try {
-      content.length
-        ? (await insertPlaylist(`${baseURL}/${endpoint}`, body),
-          message.edit(`Created playlist: ${name}`))
-        : message.edit(`Enter a playlist name`);
-    } catch (err) {
-      message.edit(`ERROR: failed to create ${name}`);
-      console.error({ err: err.message });
+    if (!name.length) {
+      message.edit(`Enter a playlist name`);
+    } else {
+      try {
+        await insertPlaylist(`${baseURL}/${endpoint}`, body);
+        message.edit(`Created playlist: ${name}`);
+      } catch (err) {
+        message.edit(`ERROR: failed to create ${name}`);
+        console.error({ err: err.message });
+      }
     }
   }
 };

@@ -1,6 +1,6 @@
 const insertPlaylist = require("../../services/axios-post");
 const baseURL = process.env.BASE_URL;
-const endpoint = "/api/playlists/create";
+const endpoint = "api/playlists/create";
 
 module.exports = {
   name: "create",

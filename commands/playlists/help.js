@@ -3,6 +3,7 @@ module.exports = {
   category: "playlists",
   description: "displays a help message",
   run: async (client, msg, args) => {
+    // todo: pull commands from fs
     const message = await msg.channel.send(`loading up my brain`);
     const embed = {
       color: 0x000000,

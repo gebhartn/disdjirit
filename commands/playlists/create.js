@@ -13,7 +13,7 @@ module.exports = {
     const message = await msg.channel.send(`Creating new playlist: ${name}`);
 
     if (!name.length) {
-      message.edit(`Enter a playlist name`);
+      message.edit(`ERROR: Must provide a playlist name`);
     } else {
       try {
         await insertPlaylist(`${baseURL}/${endpoint}`, body);

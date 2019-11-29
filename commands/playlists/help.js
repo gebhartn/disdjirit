@@ -8,9 +8,6 @@ module.exports = {
     const embed = {
       color: 0x000000,
       title: "Command List",
-      author: {
-        name: "Help"
-      },
       fields: [
         {
           name: "Create a playlist",
@@ -18,11 +15,15 @@ module.exports = {
         },
         {
           name: "Add to your playlist",
-          value: `::add *song name* *playlist name*`
+          value: `::add *song name* | *playlist name*`
         },
         {
           name: "View your playlist",
           value: `::view *playlist name*`
+        },
+        {
+          name: "View a user's playlist",
+          value: `::view *playlist name* | @user`
         }
       ]
     };

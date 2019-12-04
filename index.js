@@ -34,6 +34,7 @@ client.on("ready", () => {
 
 // message listen
 client.on("message", msg => {
+  // middleware isn't working correctly, but users decided it was a fun feature
   const prefix = "::";
   // validation middleware ignores bot to prevent feedback loop
   validateViableInputs(msg, prefix);
